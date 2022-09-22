@@ -1,7 +1,8 @@
 import { Router } from "express";
 import multer from "multer";
 
-import { createCategoryController } from "../modules/cars/useCases/createCategory";
+// 1 ajustar importação
+import { CreateCategoryController } from "../modules/cars/useCases/createCategory/CreateCategoryController";
 import { importCategoryController } from "../modules/cars/useCases/ImportCategory";
 import { listCategoriesController } from "../modules/cars/useCases/listCategories";
 
@@ -11,9 +12,11 @@ const upload = multer({
     dest: "./tmp",
 });
 
-categoriesRoutes.post("/", (request, response) => {
-    return createCategoryController.handle(request, response);
-});
+// 2 instanciar a classe
+const createCategoryController = new CreateCategoryController();
+
+// 3 alterar requeste/response
+categoriesRoutes.post("/", createCategoryController.handle);
 
 categoriesRoutes.get("/", (request, response) => {
     return listCategoriesController.handle(request, response);

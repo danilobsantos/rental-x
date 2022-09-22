@@ -1,19 +1,17 @@
 import { Request, Response } from "express";
+// importar container
+import { container } from "tsyringe";
 
 import { CreateCategoryUseCase } from "./CreateCategoryUseCase";
 
 class CreateCategoryController {
-    constructor(private createCategoryUseCase: CreateCategoryUseCase) {}
-
-    handle(request: Request, response: Response): Response {
+    // constructor(private createCategoryUseCase: CreateCategoryUseCase) {} --remove
+    async handle(request: Request, response: Response): Promise<Response> {
         const { name, description } = request.body;
 
-        // const createCategoryService = new CreateCategoryUseCase(
-        //     categoriesRepository
-        // );
-        // acrescenta this. e altera a o nome da variável
-
-        this.createCategoryUseCase.execute({ name, description });
+        const createCategoryUseCase = container.resolve(CreateCategoryUseCase);
+        // remover o this
+        await createCategoryUseCase.execute({ name, description });
 
         return response.status(201).send();
     }
