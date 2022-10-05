@@ -1,6 +1,5 @@
 import { container } from "tsyringe";
 
-// import UsersRepository
 import { UsersRepository } from "../../modules/accounts/repositories/implementations/UsersRepository";
 import { IUsersRepository } from "../../modules/accounts/repositories/IUserRepository";
 import { ICategoriesRepository } from "../../modules/cars/repositories/ICategoriesRepository";
@@ -17,7 +16,7 @@ container.registerSingleton<ISpecificationsRepository>(
     "SpecificationsRespository",
     SpecificationsRespository
 );
-// criando injection UsersRepository
+
 container.registerSingleton<IUsersRepository>(
     "UsersRepository",
     UsersRepository

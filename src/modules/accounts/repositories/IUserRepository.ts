@@ -3,8 +3,8 @@ import { User } from "../entities/user";
 
 interface IUsersRepository {
     create(data: ICreateUserDTO): Promise<void>;
-    // criando a função de validação
     findByEmail(email: string): Promise<User>;
+    findById(id: string): Promise<User>;
 }
 
 export { IUsersRepository };
