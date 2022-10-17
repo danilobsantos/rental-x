@@ -1,4 +1,3 @@
-// importar
 import { inject, injectable } from "tsyringe";
 
 import { ISpecificationsRepository } from "../../repositories/ISpecificationsRepository";
@@ -7,10 +6,10 @@ interface IRequest {
     name: string;
     description: string;
 }
-@injectable() // inserir
+@injectable()
 class CreateSpecificationUseCase {
     constructor(
-        @inject("SpecificationRepository") // inserir
+        @inject("SpecificationsRespository")
         private specificationsRepository: ISpecificationsRepository
     ) {}
     async execute({ name, description }: IRequest): Promise<void> {
