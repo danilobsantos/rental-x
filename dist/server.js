@@ -32,4 +32,4 @@ app.use((err, request, response, next) => {
     next();
 });
 dotenv_1.default.config();
-app.listen(3334, () => console.log("Server is running!"));
+app.listen(process.env.PORT || 3333, () => console.log("Server is running!"));

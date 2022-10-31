@@ -9,20 +9,20 @@ services:
         ports: 
             - 5432:5432
         environment:
-            - POSTGRES_USER=docker
-            - POSTGRES_PASSWORD=123456
-            - POSTGRES_DB=rental-x
+            - POSTGRES_USER=flvuqkghcrvdlj
+            - POSTGRES_PASSWORD=1e550a35e42f4fe5d54a809abf1e1ca093adf7373a890c719eecbeb12c8e9535
+            - POSTGRES_DB=de4amkeqko6sek
         volumes:
             - pgdata:/data/postgres
         
     app:
         build: .
         container_name: rental-x
+        command: sh -c "npm run migrate && npm run start"
         ports:
             - 3333:3333
         volumes:
             - .:/usr/app
-        # remover network_mode e adicionar
         links: 
             - database
         depends_on:
