@@ -1,3 +1,4 @@
+import dotenv from "dotenv";
 import "reflect-metadata";
 import express, { NextFunction, Request, Response } from "express";
 // importar express-async-errors
@@ -34,4 +35,5 @@ app.use(
     }
 );
 
-app.listen(3333, () => console.log("Server is running!"));
+dotenv.config();
+app.listen(3334, () => console.log("Server is running!"));
