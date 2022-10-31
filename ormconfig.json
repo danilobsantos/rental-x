@@ -1,7 +1,7 @@
 {
     "name": "default",
     "type": "postgres",
-    "url": "postgres://flvuqkghcrvdlj:1e550a35e42f4fe5d54a809abf1e1ca093adf7373a890c719eecbeb12c8e9535@ec2-44-209-57-4.compute-1.amazonaws.com:5432/de4amkeqko6sek",
+    "url": "postgres://mmnbeiypbtwfpl:5cedd8cabe5cdd4ef1e38bc5d62bfb8c80d24a0832203a864621fc4ef44fcdf6@ec2-44-209-57-4.compute-1.amazonaws.com:5432/dc8u3mlbukrjhg",
     "synchronize": true,
     "logging": true,
     "ssl": true,
